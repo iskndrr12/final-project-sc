@@ -1,0 +1,21 @@
+version: '3.3'
+services:
+  flask:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - pgsql
+    volumes:
+      - .:/src
+  pgsql:
+    container_name: final-project-sc
+    image: 'postgres:13.3-alpine'
+    ports:
+      - '15432:5432'
+    environment:
+      POSTGRES_DB: final-project-sc
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_HOST: final-project-sc
+      POSTGRES_PORT: 5432

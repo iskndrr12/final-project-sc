@@ -1,0 +1,4 @@
+final-project-sc/
+*.pyc
+__pycache__/
+migrations/
